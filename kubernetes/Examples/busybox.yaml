@@ -1,0 +1,52 @@
+#the start of the file lines
+---
+#apps/v1 -> Deployment - v1 -> Namespace/Service
+apiVersion: apps/v1
+#Defines the type of yaml Deployment/Namespace/Service
+kind: Deployment
+metadata:
+#Name of the app pod
+  name: busybox
+#Namespace where to run the pod
+  namespace: default
+#As a reference of the app
+  labels:
+    app: busybox
+spec:
+#Number of pods available
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+      #Image name
+      - name: busybox-container
+      #Image from registry 
+        image: busybox:latest
+      #Expose to others pods
+        #ports:
+        #- containerPort: 3000
+        # Keep the container running
+        command: [ "/bin/sh", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
+        #Memory and cpus given and limits
+        resources:
+          requests:
+            cpu: 30m
+            memory: 64Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
+        #security
+        securityContext:
+          allowPrivilegesEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          readOnlyRootFilesystem: true
