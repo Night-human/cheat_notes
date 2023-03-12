@@ -1,4 +1,4 @@
-## Docker cheat sheet
+## Docker
 
 ### Download Docker engine(Linux)
 
@@ -47,4 +47,29 @@ sudo usermod -aG docker $USER
 ```
 
 Reboot the system and it's done!
+
+## Docker Commands
+
+- Run Container
+`Docker run [options] <image>`
+
+- Pull Image
+`docker pull [options] <image>`
+
+- Stop Container 
+`docker stop <containerId>`
+
+- Start Container 
+`docker start <containerID>`
+
+- Delete Container
+`docker rm <containerID>`
+
+
+## Docker Registry Commands
+
+- Create Image
+`docker commit -p <containerId> <name>:<label>`
+
+- Push Image
 
