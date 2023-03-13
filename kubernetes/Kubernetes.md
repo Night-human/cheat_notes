@@ -8,7 +8,7 @@ cluster has:
   - Worker node/s
 ---
 
-## Intall kubernetes
+## Install kubernetes
 
 1. Run in command line
    

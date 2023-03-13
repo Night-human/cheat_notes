@@ -50,26 +50,25 @@ Reboot the system and it's done!
 
 ## Docker Commands
 
-- Run Container
-`Docker run [options] <image>`
+- Run Container: `Docker run [options] <image>`
 
-- Pull Image
-`docker pull [options] <image>`
+- Pull Image: `docker pull [options] <image>`
 
-- Stop Container 
-`docker stop <containerId>`
+- Stop Container: `docker stop <containerId>`
 
-- Start Container 
-`docker start <containerID>`
+- Start Container: `docker start <containerID>`
 
-- Delete Container
-`docker rm <containerID>`
+- Delete Container: `docker rm <containerID>`
+
+- Copy files into container: `docker cp ./path  <containerId>:./path`
+  > Note: invert arguments to copy from container to host
+
+- Expose container: `Docker run -p <externalPort>:<internalPort> [options] <image>`
 
 
 ## Docker Registry Commands
 
-- Create Image
-`docker commit -p <containerId> <name>:<label>`
+- Create Image: `docker commit -p <containerId> <name>:<label>`
 
 - Push Image
 
