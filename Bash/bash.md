@@ -76,3 +76,17 @@ List of values/ranges basically.
 
     //Check if a file exists example
     [ -a index.s ]; echo $?
+
+# Arrays
+
+    //Create an array
+    fruits=("Melon" "Pineapple" "Grape")
+
+    //Add next value to the list
+    fruits+=("Strawberry")
+
+    //Add value from index
+    fruits[2]="Apple"
+
+    //Print all values
+    echo ${fruits[@]}
