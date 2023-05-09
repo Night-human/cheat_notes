@@ -90,3 +90,51 @@ List of values/ranges basically.
 
     //Print all values
     echo ${fruits[@]}
+
+# if
+
+    if condition
+    then
+        script
+    fi
+
+    //Example
+    if [ 1 -eq 1 ] 
+    then 
+        echo "1 equeals to 1"
+    fi
+
+# while
+
+    while condition
+    do
+        script
+    done
+
+    //Example
+    declare -i n=0
+    while [ $n -lt 5 ]
+    do 
+        echo "hi" 
+        ((n++))
+    done
+
+# for
+
+    for i in  ... 
+    do
+        script
+    done
+
+    //Example
+    for i in {1..12}
+    do 
+        echo $i
+    done
+
+    //Example
+    fruits=("watermelon" "apple" "banana")
+    for i in ${fruits[@]}
+    do 
+        echo $i
+    done
