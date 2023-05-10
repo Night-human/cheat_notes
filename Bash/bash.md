@@ -157,8 +157,34 @@ List of values/ranges basically.
     
     myFunction Alex //call with parameter
     
+$ arguments
+
+    //Example
+    echo "This is an example from $1, for arguments in $0"
     
+    ./script.bat Alex
     
+    > "This is an example from Alex, for arguments in ./script.bat"
+   
+ 
+# options
+
+    while options :a:b: option; do
+        case $option in
+            a) echo "argument a is $a"
+            b) echo "argument a is $b"
+            ?) echo "Empty"
+        esac
+    done
+    
+    > ./script.bat -a hola -b adios
+    
+# read
+
+    echo "give me a number"
+    read n
+    
+    echo $n
 
 
     
