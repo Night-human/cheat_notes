@@ -149,13 +149,14 @@ List of values/ranges basically.
         *) echo "Default"
     esac
 
-# funtions
+# functions
 
     myFunction() {
-        echo "It's a function"
+        echo "It's a function from $1"
     }
     
-    myFunction //call
+    myFunction Alex //call with parameter
+    
     
     
 
