@@ -138,3 +138,27 @@ List of values/ranges basically.
     do 
         echo $i
     done
+    
+# case
+    
+    fruit="mango"
+    
+    case $fruit in
+        apple) echo "An apple";;
+        melon|pineapple) echo "This certainaly not";;
+        *) echo "Default"
+    esac
+
+# funtions
+
+    myFunction() {
+        echo "It's a function"
+    }
+    
+    myFunction //call
+    
+    
+
+
+    
+        
