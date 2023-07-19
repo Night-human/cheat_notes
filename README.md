@@ -5,3 +5,5 @@ cheat sheet notes
 
 - Docker engine
 - Kubernetes
+- Selenium
+- Bash
