@@ -37,6 +37,14 @@ public class Coche {
 
     public string model;
 
+    public Coche (string _marca, string _modelo) {
+
+    marca = _marca;
+
+    modelo = _modelo;
+
+    }
+
     public void arrancar () {
 
     //Code
