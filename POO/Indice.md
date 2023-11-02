@@ -2,7 +2,7 @@
 
 ## Indice
 
-- Clases y objetos
+- [Clases y objetos](Topics/Clases.md "Clases y objetos")
 - Abstracción
 - Encapsulamiento
 - Herencia
