@@ -31,30 +31,30 @@ Ejemplo:
 - Atributos: Marca, Modelo
 - Métodos: arrancar, detener
 
-public class Coche {
+        public class Coche {
 
-    public string marca;
+            public string marca;
 
-    public string model;
+            public string model;
 
-    public Coche (string _marca, string _modelo) {
+            public Coche (string _marca, string _modelo) {
 
-    marca = _marca;
+            marca = _marca;
 
-    modelo = _modelo;
+            modelo = _modelo;
 
-    }
+            }
 
-    public void arrancar () {
+            public void arrancar () {
 
-    //Code
+            //Code
 
-    }
+            }
 
-    public void detener () {
+            public void detener () {
 
-    //Code
+            //Code
 
-    }
+            }
 
-}
+        }
