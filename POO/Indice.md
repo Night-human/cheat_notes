@@ -7,3 +7,4 @@
 - [Encapsulamiento](Topics/Encapsulamiento.md "Encapsulamiento")
 - [Herencia](Topics/Herencia.md "Herencia")
 - [Polimorfismo](Topics/Polimorfismo.md "Polimorfismo")
+- [Buenas practicas](Topics/Buenas_practicas.md "Buenas practicas")
