@@ -6,6 +6,7 @@ Cluster: instance of kubernetes
 cluster has:
   - Control plane: control creation, modification and deletion of nodes and pods
   - Worker node/s
+    - Worker nodes contains pods which contains containers or replicas
 ---
 
 ## Install kubernetes
