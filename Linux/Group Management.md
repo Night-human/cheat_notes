@@ -24,3 +24,29 @@ column 1: The name of the group
 column 2: Password of the group (if any)  
 column 3: GID or Group Id  
 column 4: Actual members of the group  
+
+## Add a group command
+
+    groupadd <group>
+
+## Delete a group command
+
+    groupdel <group>
+
+## Add a user to a group
+
+This command appends a user to a group.
+
+    usermod -aG <group> <user>
+
+The flags "-aG" append a new group to the complementary group list.
+
+> alex : alex complementary complementary2
+
+The flag "-G" overwrites the complementary groups list.
+
+> alex : alex new_complementary_group
+
+The flag "-g" modifies the primary group only.
+
+> alex : new_primary_group complementary complementary2
