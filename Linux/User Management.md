@@ -23,6 +23,17 @@ Prompt new user password input
 
     passwd <user>
 
+## Change a user directory
+
+Moves all user files from old directory to the new one.
+
+    usermod -d /home/<new_directory> <user> -m
+
+## Update username
+
+    usermod -l <new_user> <user>
+
+
 ## User tracking files: /etc/passwd and /etc/shadow
 
 There are two important files where user account information is stored, the /etc/passwd and /etc/shadow.

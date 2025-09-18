@@ -39,6 +39,10 @@ This command appends a user to a group.
 
     usermod -aG <group> <user>
 
+or
+
+    gpasswd -a <user> <group>
+
 The flags "-aG" append a new group to the complementary group list.
 
 > alex : alex complementary complementary2
@@ -50,3 +54,7 @@ The flag "-G" overwrites the complementary groups list.
 The flag "-g" modifies the primary group only.
 
 > alex : new_primary_group complementary complementary2
+
+## Remove user from a group
+
+    gpasswd -d <user> <group>
