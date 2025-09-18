@@ -19,7 +19,9 @@ Password Management notes and commands. Execute man command or --help to get mor
 
     chage -l <user>
 
-## Force users to change their passwords after the first login. Expiration days left 0 in this example.
+## Force users to change their passwords after the first login. 
+
+Expiration days left 0 in this example.
 
     chage -d 0 <user>
 
