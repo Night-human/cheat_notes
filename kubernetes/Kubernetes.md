@@ -1,5 +1,52 @@
 # Kubernetes
 
+Kubernetes es una plataforma de orquestación de contenedores Open Source.
+
+- Administra contenedores.
+- Permite definir como deben comportarse las aplicaciones(Resplicas, recursos, comunicación).
+- Matiene el estado deseado, reparando fallos.
+
+## Proposito
+
+1. Automatiozación del despliegue
+
+  - Define aplicaciones en archivos yaml.
+  - K8s crea los contenedores, redes, volumenes, etc.
+
+2. Escalabilidad automatica
+
+  - Escala horizontalmente(Más replicas).
+  - Escala verticalmente(Más cpu/ram).
+
+3. Alta disponibilidad
+
+  - Si un nodo falla, k8s mueve los contenedores a otro nodo
+  - Reintenta automaticamente los pods que fallan.
+
+4. Gestion de configuracion y secretos 
+
+  - Maneja variables de entorno, archivos de configuracion y credenciales de forma segura.
+
+5. Balanceo de carga y descubrimiento de servicios
+
+  - Asigna IPs internas y DNS a servicios.
+  - Balanceo automatico entre replicas.
+
+6. Actualizacion sin interrupciones
+
+  - Permite hacer rolling updates y rolling backs facilmente.
+
+## Componentes
+
+### Componentes del control plane
+
+- Kube-Apiserver: expone la api de k8s. Es el frontend de k8s, recibe las peticiones y actualiza acorde al estado etcd. Tambien, es una implementacion preparada para ejecutarse en alta disponibilidad y que puede escalar horizontalmente para balancear la carga entre varias instancias.
+
+- etcd: Almacen de datos persistente, consistente y distribuido de clave-valor utilizado para guardar toda la informacion del cluster.
+
+- Kube-Scheduler: Componente que esta pendiente de los pods que no han sido asignados a algun nodo, selecciona uno donde ejecutarlo. Para decidir, toma en cuenta requisitos de recursos, restricciones de hardware, software, politicas, afinidad, anti afinidad, entre otros.
+
+Kube-controller manager: Ejecuta los contoladores de k8s.
 
 ---
 Cluster: instance of kubernetes
