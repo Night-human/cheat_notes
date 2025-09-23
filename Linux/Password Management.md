@@ -44,3 +44,14 @@ First, install the Pluggable Authentication Module(PAM).
 
     apt-get install libpam-cracklib
 
+> Is recommended to have a terminal with root access opened while modifying files related to authentication in case something go wrong.
+
+### Enable password history
+
+Edit the file: /etc/pam.d/common-password
+
+This lines prevent users to reuse the last 99 password.
+
+    password    required    pam_pwhistory.so
+    remember=99 use_authok
+
