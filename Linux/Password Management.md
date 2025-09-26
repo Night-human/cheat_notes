@@ -2,7 +2,7 @@
 
 Password Management notes and commands. Execute man command or --help to get more usege information.
 
-    man groups
+    man passwd
     passwd --help
 
  ## Lock an account
