@@ -44,7 +44,7 @@ Type of resources:
 
 ## Modify permissions
 
-There are few ways modify permissions. One of them is as follows:
+There are few ways to modify permissions. One of them is as follows:
 
 ### First way
 
@@ -71,3 +71,15 @@ In this example, the directory applies recursive permissions. User has all of th
 You can find and apply permissions this way:
 
     find /path/to/dir/ -type f -exec chmod 644 {} \;
+
+## Change ownership
+
+Change user owner recursively over directories and their files.
+
+    chown -R <user> <file>
+
+Change the group with the following syntax.
+
+    chown <user>:<group> <file>
+    or
+    chgrp <group> <file>
