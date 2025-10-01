@@ -23,6 +23,17 @@ Prompt new user password input
 
     passwd <user>
 
+## Change a user directory
+
+Moves all user files from old directory to the new one.
+
+    usermod -d /home/<new_directory> <user> -m
+
+## Update username
+
+    usermod -l <new_user> <user>
+
+
 ## User tracking files: /etc/passwd and /etc/shadow
 
 There are two important files where user account information is stored, the /etc/passwd and /etc/shadow.
@@ -54,3 +65,26 @@ column 8: Number of days since the UNIX Epoch that
 will elapse before the account is disabled  
 
 > Note: root account has an ! in the second column. That means this account is locked to logging in directly. You need to login from another account first, then switch to the root account.
+
+## Default configuration files /etc/skel(skeleton)
+
+Files are copied into the home directory of the created users. It provides recomended configuration and you can add more if requiered, they will be copied too.  
+
+## Switching between users
+
+Set the root user password(Not recommended)
+
+    sudo passwd
+
+Switch to root user
+
+    sudo su
+
+Switch to another user
+
+    su <user>
+
+Switch without a user password
+
+    sudo su <user>
+
