@@ -50,3 +50,20 @@ New partition label: /dev/sdz1
 
     mkfs.ext4 /dev/sdz1
 
+## Mounting and unmounting storage volumes
+
+There are two directories to mount volumes by default. Both of them are suggestions that the FHS recommends, but you can mount the storage in any empty directory.
+
+- \/mnt  
+for temporary volumes as network attached storage, additional hard drives, virtual hard disks, etc. 
+
+- /media  
+    for removable devices as external hard drives, flash drives, CD-ROM, etc.
+
+Mount command
+
+    mount <hard drive path> <mount path>
+
+Unmount command
+
+    unmount <mount path>
