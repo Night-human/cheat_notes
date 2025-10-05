@@ -66,4 +66,6 @@ Mount command
 
 Unmount command
 
-    umount <mount path>
+    umount <mount path
+   
+> Note: Keep an eye over disk path before and after partitioning. Labels tends to change.
