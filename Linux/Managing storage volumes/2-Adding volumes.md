@@ -69,3 +69,33 @@ Unmount command
     umount <mount path
    
 > Note: Keep an eye over disk path before and after partitioning. Labels tends to change.
+
+## /etc/fstab file
+
+This file is used to define which volumes will be automatically mounted at boot time, even system volumes.
+
+Output example from / partition line:
+
+    UUID=1eb7b086-d119-4263-8def-53c83a7333bf  /  ext4 defaults 0 1
+
+column 1: UUID  
+column 2: mount point  
+column 3: type  
+column 4: options  
+
+defaults
+
+- rw: Device will be mounted read/write
+- exec: Allow files within this volume to be executed as programs
+- auto: Automatically mount the device at boot time
+- nouser: Only root is able to mount the filesystem
+- async: Output to the device should be asynchronous
+
+column 5: dump  
+column 6: pass  
+
+UUID of the volumes can be found by executing:
+
+    sudo blkid
+
+> Note: fstab is not ideal for Removable devices or dynamic mounts.
