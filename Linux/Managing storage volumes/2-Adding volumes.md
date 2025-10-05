@@ -66,4 +66,4 @@ Mount command
 
 Unmount command
 
-    unmount <mount path>
+    umount <mount path>
