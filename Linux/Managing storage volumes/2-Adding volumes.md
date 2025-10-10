@@ -99,3 +99,58 @@ UUID of the volumes can be found by executing:
     sudo blkid
 
 > Note: fstab is not ideal for Removable devices or dynamic mounts.
+
+Mount devices set with auto.
+
+    mount -a
+
+Mount devices set with noauto.
+
+    mount <mount path only>
+
+## Managing swap
+
+Adding swap to the fstab file will not mount it automatically with the previous command: mount -a.
+We do it this way:
+
+    swapon -a
+
+The flow is simple, first find, then mount and finally activate it. If you want the opposite action enter the next command.
+
+    swapoff -a
+
+To check the free memory available, use this:
+
+    free -m
+
+### Create swap file
+
+There are few ways to create swap memory, one of them is by creating a swapfile. Then prepare it to be used as swap.
+
+    #Create swap file
+    fallocate -l 4G /swapfile
+
+    #Prepare
+    mkswap /swapfile
+
+Finally add it to fstab file and execute the swapon -a command.
+
+> Remember to unmount swap memory before.
+
+### Create swap from disk or virtual memory
+
+Execute
+
+    fdisk </dev/disk>
+
+- Select n for new partition
+- Select p for primary partition
+- Give it the space you need
+- Select t for type of partition
+- Select w to save
+
+Prepare the swap partition:
+
+    mkswap </dev/swap partition>
+
+Finally add it to the fstab and then use swapon -a.
