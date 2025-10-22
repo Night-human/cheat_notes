@@ -68,9 +68,24 @@ Display LV information
 
 ## Extend space
 
+First
+
     lvextend -n /dev/mapper/<LV> -l 100%FREE
+
+    or
+
+    lvextend -L+10g <PV-path>
+
+Then 
 
     resize2fs /dev/mapper/<LV>
 
 > This command will take all the free space from the multiple PVs assigned to the VG.
+
+## Extend Volume Groups
+
+Make sure to have PV disk ready.
+
+    vgextend <vg-name> <disk-path>
+
 
