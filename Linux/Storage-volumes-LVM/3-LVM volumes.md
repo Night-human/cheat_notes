@@ -4,6 +4,11 @@ With LVM, we are able to resize the filesystem without reboot our system.
 
 Is recommended to use LVM on storage volumes in virtual servers whenever possible.
 
+ > hint: 
+ > Disk -> Converted to Physical volume
+ > Physical volume -> Added to Volume group
+ > Volume group -> Create Logical volumes from Physical volumes
+
 ## Volume groups
 
 A volume group is a namespace given to all physical and logical volumes in the system. It is like a container.
@@ -62,23 +67,23 @@ Display LV information
 
 ## Formatting and mounting
 
-    mkfs.ext4 /dev/mapper/<LV found above>
+    mkfs.ext4 /dev/mapper/<GV found above>
 
-    mount /dev/mapper/<LV> <mount path>
+    mount /dev/mapper/<GV> <mount path>
 
 ## Extend space
 
 First
 
-    lvextend -n /dev/mapper/<LV> -l 100%FREE
+    lvextend -n /dev/mapper/<GV> -l 100%FREE
 
     or
 
-    lvextend -L+10g <PV-path>
+    lvextend -L+10g <GV-path>
 
 Then 
 
-    resize2fs /dev/mapper/<LV>
+    resize2fs /dev/mapper/<GV>
 
 > This command will take all the free space from the multiple PVs assigned to the VG.
 
@@ -87,5 +92,8 @@ Then
 Make sure to have PV disk ready.
 
     vgextend <vg-name> <disk-path>
+
+
+
 
 
