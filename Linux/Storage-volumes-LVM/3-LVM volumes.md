@@ -4,11 +4,6 @@ With LVM, we are able to resize the filesystem without reboot our system.
 
 Is recommended to use LVM on storage volumes in virtual servers whenever possible.
 
- > hint: 
- > Disk -> Converted to Physical volume
- > Physical volume -> Added to Volume group
- > Volume group -> Create Logical volumes from Physical volumes
-
 ## Volume groups
 
 A volume group is a namespace given to all physical and logical volumes in the system. It is like a container.
@@ -83,7 +78,7 @@ First
 
 Then 
 
-    resize2fs /dev/mapper/<GV>
+    resize2fs /dev/mapper/<VG>
 
 > This command will take all the free space from the multiple PVs assigned to the VG.
 
@@ -94,6 +89,37 @@ Make sure to have PV disk ready.
     vgextend <vg-name> <disk-path>
 
 
+## Delete Logical, Physical and volume Groups
+
+    vgremove <vg-path>
+
+    lvremove <lv-path>
+
+    pvremove <pv-path>
+
+> This action may wipe your data
 
 
+## Create Snapshot
 
+Snapshots are useful when we have to make changes in our original files. If we make a mistake, we can easily recover the original state of our data from an snapshot.
+
+> Mount the snapshot is not needed.
+
+###  Creating snapshots
+
+We need an lv as a target volume to copy their current state to the snapshot volume.
+
+    lvcreate -s -n snapshot -L 500m <lv-path>
+
+### Recover our original state
+
+We need to unmount the original volume first. Then use:
+
+    lvconvert --merge <snapshot-path>
+
+> This action will erase our snapshot volume.
+
+### Recover data manually
+
+Do this by mounting de snapshot and copy the files you want to recover their original state.
