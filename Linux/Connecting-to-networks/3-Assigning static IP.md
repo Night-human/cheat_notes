@@ -65,3 +65,8 @@ Then apply:
 
     sudo netplan apply
 
+## Install tmux
+
+Tmux keeps your session alive after lossing the ssh connection or after being droped. Useful when we are working with remote servers.
+
+    sudo apt install tmux
