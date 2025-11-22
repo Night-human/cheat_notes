@@ -70,13 +70,14 @@ Display LV information
 
 First
 
-    lvextend -n /dev/mapper/<GV> -l 100%FREE
+    lvextend -n /dev/mapper/<GV> -l 100%FREE -r
 
     or
 
-    lvextend -L+10g <GV-path>
+    lvextend -L+10g <GV-path> -r
+    lvextend -L 10g <GV-path> -r
 
-Then 
+Then(only if the flag -r is ommited above)
 
     resize2fs /dev/mapper/<VG>
 
@@ -117,6 +118,10 @@ We need an lv as a target volume to copy their current state to the snapshot vol
 We need to unmount the original volume first. Then use:
 
     lvconvert --merge <snapshot-path>
+
+If you make a mistake and tried to merge the snapshot with the original volume mounted yet, try this:
+
+    lvchange --refresh <VG-name>
 
 > This action will erase our snapshot volume.
 
