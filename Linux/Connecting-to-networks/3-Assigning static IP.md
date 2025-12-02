@@ -51,7 +51,7 @@ Edit the file under /etc/netplan directory:
         enp0s3:
         dhcp4: false
         addresses:
-            - 191.168.1.98/24
+            - 192.168.1.98/24
         routes: 
             - to: default
             via: 192.168.1.1
